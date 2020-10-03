@@ -64,7 +64,7 @@ group :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rspec-retry'
   gem 'rspec-sidekiq'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '~> 4.0'
   gem 'simplecov', require: false
   gem 'vcr', '2.9.3'
   gem 'webmock'
