@@ -42,6 +42,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'faker', '~>2.14.0'
 end
 
 group :development do
