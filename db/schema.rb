@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_03_021047) do
+ActiveRecord::Schema.define(version: 2020_10_04_002007) do
+
+  create_table "disciplines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "question_accesses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "question_id"
@@ -26,9 +32,10 @@ ActiveRecord::Schema.define(version: 2020_10_03_021047) do
     t.string "text"
     t.string "answer"
     t.integer "daily_access"
-    t.string "discipline"
+    t.bigint "discipline_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["discipline_id"], name: "index_questions_on_discipline_id"
   end
 
 end

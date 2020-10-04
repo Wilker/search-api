@@ -5,7 +5,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.string :text
       t.string :answer
       t.integer :daily_access
-      t.string :discipline
+      t.references :discipline
 
       t.timestamps
     end
