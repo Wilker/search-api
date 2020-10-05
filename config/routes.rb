@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       namespace :disciplines do
         resources :hottest_questions, only: :index
       end
+
+      namespace :questions do
+        resources :mostly_accessed, only: :index
+      end
     end
   end
 end
