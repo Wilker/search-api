@@ -3,10 +3,11 @@ class Api::V1::Questions::MostlyAccessedController < Api::V1::ApiController
   def index
     render json: MostlyAccessedQuestionsPresenter
                      .new(HotQuestionServices
-                              .call(maq_params(params))).as_json, status: :ok
+                              .get(most_acc_question_params(params))).as_json, status: :ok
   end
 
-  def maq_params(params)
+  def most_acc_question_params(params)
+    params.require(:year)
     params.permit(:week, :month, :year)
   end
 end
