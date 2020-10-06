@@ -13,6 +13,6 @@ RSpec.describe Api::V1::Disciplines::HottestQuestionsController, type: :request 
 
     it { expect(response.content_type).to eq('application/json; charset=utf-8') }
 
-    it { expect(parsed_body.first).to include({"name" => question1.discipline.name}) }
+    it { expect(parsed_body["disciplines"]).to include(question1.discipline.name) }
   end
 end
