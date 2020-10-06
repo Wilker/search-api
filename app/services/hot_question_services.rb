@@ -48,7 +48,7 @@ class HotQuestionServices
     end
 
     def mostly_accessed_question(top_question_accessed_ids)
-      Question.where(question_accesses: top_question_accessed_ids)
+      Question.includes(:discipline).where(question_accesses: top_question_accessed_ids)
     end
 
     def convert_params(params)
