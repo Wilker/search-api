@@ -38,6 +38,6 @@ module SearchApi
         expires_in: 1.minute,
         compress: true,
         timeout: 1,
-        url: redis_url + '/0'}
+        url: "redis://redis:6379/0"}
   end
 end
