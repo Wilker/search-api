@@ -33,5 +33,11 @@ module SearchApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    redis_url = YAML.load_file('config/redis.yml')[Rails.env]['host']
+    config.cache_store = :redis_cache_store, {
+        expires_in: 1.minute,
+        compress: true,
+        timeout: 1,
+        url: redis_url + '/0'}
   end
 end
